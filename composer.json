@@ -1,0 +1,62 @@
+{
+    "name": "cr4sec/apple-appsflyer",
+    "description": "Sending user purchases to the AppsFlyer service",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "php",
+        "apple",
+        "appsflyer",
+        "receipt",
+        "package"
+    ],
+    "support": {
+        "issues": "https://github.com/crysecurity/apple-appsflyer/issues",
+        "source": "https://github.com/crysecurity/apple-appsflyer"
+    },
+    "homepage": "https://github.com/crysecurity/apple-appsflyer",
+    "authors": [
+        {
+            "name": "Dubinskii Artem",
+            "email": "cr4sec@gmail.com",
+            "homepage": "https://github.com/crysecurity",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "aporat/store-receipt-validator": "^4.1",
+        "illuminate/console": "^8.0",
+        "illuminate/database": "^6.0|^7.0|^8.0",
+        "illuminate/http": "^8.0",
+        "illuminate/routing": "^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cr4sec\\AppleAppsFlyer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cr4sec\\AppleAppsFlyer\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cr4sec\\AppleAppsFlyer\\AppleAppsFlyerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    }
+}

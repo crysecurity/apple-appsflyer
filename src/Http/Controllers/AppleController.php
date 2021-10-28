@@ -2,6 +2,7 @@
 
 namespace Cr4sec\AppleAppsFlyer\Http\Controllers;
 
+use Carbon\Carbon;
 use Cr4sec\AppleAppsFlyer\Http\Requests\InitPaymentRequest;
 use Cr4sec\AppleAppsFlyer\Models\Purchase;
 use Cr4sec\AppleAppsFlyer\Models\Receipt;
@@ -32,7 +33,10 @@ class AppleController extends Controller
             if ($this->isItNewPurchase($receipt->purchases, $purchase['transaction_id'])) {
                 $newPurchases[] = new Purchase([
                     'transaction_id' => $purchase['transaction_id'],
-                    'is_trial' => $purchase['is_trial_period'] === 'true'
+                    'is_trial' => $purchase['is_trial_period'] === 'true',
+                    'expires_date' => Carbon::createFromTimestampMs($purchase['expires_date_ms'])->format('Y-m-d H:i:s'),
+                    'purchase_date' => Carbon::createFromTimestampMs($purchase['purchase_date_ms'])->format('Y-m-d H:i:s'),
+                    'product_id' => $purchase['product_id']
                 ]);
             }
         }

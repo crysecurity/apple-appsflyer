@@ -14,6 +14,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $apple_receipt_id
  * @property bool $is_trial
  * @property bool $sent_to_af
+ * @property string|null $product_id
+ * @property Carbon|null $purchase_date
+ * @property Carbon|null $expires_date
  * @property-read Carbon $created_at
  * @property-read Carbon $updated_at
  *
@@ -29,6 +32,13 @@ class Purchase extends Model
 
     protected $attributes = [
         'sent_to_af' => false
+    ];
+
+    protected $dates = [
+        'purchase_date',
+        'expires_date',
+        'created_at',
+        'updated_at'
     ];
 
     protected $fillable = [

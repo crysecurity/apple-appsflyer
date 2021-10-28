@@ -43,7 +43,10 @@ class Purchase extends Model
 
     protected $fillable = [
         'transaction_id',
-        'is_trial'
+        'is_trial',
+        'purchase_date',
+        'expires_date',
+        'product_id'
     ];
 
     protected $casts = [

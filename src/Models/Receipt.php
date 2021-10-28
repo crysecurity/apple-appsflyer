@@ -39,6 +39,6 @@ class Receipt extends Model
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(config('apple-appsflyer.models.user'), 'id');
+        return $this->belongsTo(config('apple-appsflyer.models.user'));
     }
 }
